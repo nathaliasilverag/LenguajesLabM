@@ -5,10 +5,12 @@ module Main where
 import ArbolDeHuffman ( ArbolDeHuffman, Code, codifica, decodifica )
 import qualified Data.Binary as Binary
 
+
 main :: IO ()
 main = do
   putStrLn "Ingrese la direccion del archivo a comprimir: "
   file <- getLine 
+  putStrLn file
   contenido <- readFile file
   let contenidoCodificado = codifica contenido
   serialize contenidoCodificado file
@@ -25,7 +27,9 @@ main = do
   putStr "Decodificado: revisar directorio actual el archivo Decodificado.hz"
  --auxiliar para ver en consola 
  -- putStrLn $ (decodifica (code,arbol))
-  writeFile "Decodificado.hz" $ (decodifica (code,arbol))
+ -- Falto modificar file con un split para separar la cadena
+  --writeFile "file.hz" $ (decodifica (code,arbol))
+  writeFile "decodificado.hz" $ (decodifica (code,arbol))
   putStrLn "\n"
 
 
