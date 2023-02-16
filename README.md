@@ -1,5 +1,7 @@
 # LenguajesLabM
 
 Para ejecutar el codigo 
-ghc --make Main.hs
-./Main
+
+1. ghc --make Main.hs
+
+2. ./Main
